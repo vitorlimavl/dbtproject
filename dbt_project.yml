@@ -36,21 +36,4 @@ clean-targets:         # directories to be removed by dbt clean
 models:
   my_new_project:
     +database: DATALAKE
-    +schema: "{{ env_var('DBT_FORCE_SCHEMA', 'SILVER') }}"
-    # Camada Bronze (dados brutos, ingestão)
-    bronze:
-      +schema: bronze
-      +materialized: table
-      +database: datalake
-
-    # Camada Silver (dados tratados, padronizados)
-    silver:
-      +schema: silver
-      +materialized: view
-      +database: datalake
-
-    # Camada Gold (dados analíticos, métricas finais)
-    gold:
-      +schema: gold
-      +materialized: table
-      +database: datalake
+    +schema: "{{ env_var('CUSTOM_SCHEMA', 'SILVER') }}"
