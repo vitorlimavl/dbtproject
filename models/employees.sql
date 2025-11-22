@@ -1,6 +1,5 @@
 {{ config(
     materialized = 'table',
-    schema = 'SILVER',
     database = 'DATALAKE'
 ) }}
 WITH CALC_EMPLOYEES AS (

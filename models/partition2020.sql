@@ -1,6 +1,5 @@
 {{ config(
     materialized = 'table',
-    schema = 'SILVER',
     database = 'DATALAKE'
 ) }}
 select * from {{ref('joins')}}

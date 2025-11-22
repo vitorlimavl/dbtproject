@@ -1,6 +1,6 @@
+--dbt run --select customers
 {{ config(
     materialized = 'table',
-    schema = 'SILVER',
     database = 'DATALAKE'
 ) }}
 WITH markup as (

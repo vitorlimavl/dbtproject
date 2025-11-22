@@ -1,7 +1,5 @@
---dbt run --select customers
 {{ config(
     materialized = 'table',
-    schema = 'SILVER',
     database = 'DATALAKE'
 ) }}
 with prod as (
